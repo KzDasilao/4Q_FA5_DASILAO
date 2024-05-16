@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS</title>
+</head>
+<body>
+    <h1>Contacts List</h1>
+    <input type="text" id="contactname" placeholder="Enter name: ">
+    <button onclick="addContact()">Add</button>
+    <button onclick="removeContact()">Remove</button> <br>
+    
+    <p id="contacts"></p>
+
+    <script>
+        var contacts = [];
+
+        function print() {
+            var display = "";
+            for (var x = 0; x < contacts.length; x++) {display += contacts[x] + " ";}
+            document.getElementById("contacts").innerHTML = display;
+        }
+
+        function addContact() {
+            var nm = document.getElementById("contactname").value;
+            if (nm != "") {
+                contacts.push(nm);
+                if (contacts.length > 7) {contacts.shift();}
+                print();
+                document.getElementById("contactname").value = "";
+            }
+        }
+
+        function removeContact() {
+            if (contacts.length > 0) {
+                contacts.pop();
+                print();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONTROL STRUCTURES</title>
+</head>
+<body>
+    <h1>Generate Shape</h1>
+    <script>
+        function generateShape() {
+            do {
+                var enter = prompt("Enter a number: ");
+            } while (isNaN(enter));
+
+            var number = parseInt(enter);
+            document.write("Number Inputted: " + number + "</br> ");
+
+            if (number%2 == 0) {
+                for (x=number; x>0; x--) {
+                    for (y=x; y>0; y--) {
+                        document.write(x + " ");
+                    }
+                    document.write("</br>");
+                }
+            }
+            else {
+                for (a=number; a>0; a--) {
+                    for (b=number; b>0; b--) {
+                        document.write(a + " ");
+                    }
+                    document.write("</br>");
+                }
+            }
+        }
+        generateShape();
+    </script>
+</body>
+</html>
